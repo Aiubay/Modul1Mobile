@@ -12,8 +12,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
     public int modal = 65500;
-    private int makan = 50000;
-    private int notnormalmakan =30000;
+    private int eatbus = 50000;
+    private int apnormal =30000;
     private int totalharga;
     private EditText mMenu;
     private EditText mJumlah;
@@ -38,13 +38,13 @@ public class MainActivity extends AppCompatActivity {
         int jumlah = Integer.parseInt(mJumlah.getText().toString());
         String menu = mMenu.getText().toString();
 
-        totalharga = jumlah *notnormalmakan;
+        totalharga = jumlah *apnormal;
         Intent intent = new Intent(this, Main2Activity.class);
         intent.putExtra("jumlah",jumlah);
         intent.putExtra("menu",menu);
         intent.putExtra("totalharga", totalharga);
         intent.putExtra("modal", modal);
-        intent.putExtra("tempat","KFC");
+        intent.putExtra("tempat","Apnormal");
         startActivity(intent);
     }
 
@@ -54,13 +54,13 @@ public class MainActivity extends AppCompatActivity {
         int jumlah = Integer.parseInt(mJumlah.getText().toString());
         String menu = mMenu.getText().toString();
 
-        totalharga = jumlah *makan;
+        totalharga = jumlah *eatbus;
         Intent intent = new Intent(this, Main2Activity.class);
         intent.putExtra("menu",menu);
         intent.putExtra("jumlah", jumlah);
         intent.putExtra("totalharga",totalharga);
         intent.putExtra("modal", modal);
-        intent.putExtra("tempat", "Munjul");
+        intent.putExtra("tempat", "Eatbus");
 
         startActivity(intent);
     }
